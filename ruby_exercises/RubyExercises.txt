@@ -1,0 +1,50 @@
+# 1. Use the "each" method of Array to iterate over [1, 2, 3, 4, 5, 6, 7, 8, 9, 10], and print out each value.
+[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].each { |e| puts e }
+
+# 2. Same as above, but only print out values greater than 5.
+array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+array.each { |e| puts e if e > 5 }
+
+# 3. Now, using the same array from #2, use the "select" method to extract all odd numbers into a new array.
+new_array = array.select { |e| e%2 == 1 }
+
+# 4. Append "11" to the end of the array. Prepend "0" to the beginning.
+[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].push(11).unshift(0)
+
+# 5. Get rid of "11". And append a "3".
+new_array.pop
+new_array.push(3)
+
+# 6. Get rid of duplicates without specifically removing any one value. 
+new_array.uniq!
+
+# 7. What's the major difference between an Array and a Hash?
+An array is automatically indexed using zero-based integers.  A hash has a key/value pair, both of which you assign.
+
+# 8. Create a Hash using both Ruby 1.8 and 1.9 syntax.
+my_ruby_1_8_hash = { "my_key" => some_value, "another_key" => a_different_value }
+my_ruby_1_9_hash = { my_key: :some_value, another_key: :a_different_value }
+
+# Suppose you have a h = {a:1, b:2, c:3, d:4}
+
+# 9. Get the value of key "b".
+h[:b]
+
+# 10. Add to this hash the key:value pair {e:5}
+h[:e] = 5
+
+# 13. Remove all key:value pairs whose value is less than 3.5
+h.delete_if { |key, value| value < 3.5 }
+
+# 14. Can hash values be arrays? Can you have an array of hashes? (give examples)
+Yes and yes
+my_hash_of_arrays = { val: [1, 2, 3], val_2: [4, 5, 6] }
+my_array_of_hashes = [{my: 'value'}, {my_other: 'value'}]
+
+# 15. Look at several Rails/Ruby online API sources and say which one your like best and why.
+
+I have been playing with Ruby/RoR for about a year and I tend to bounce back and forth between aipdock.com and ruby-doc.org.  
+
+The reason I like apidock.com is because of the ease in which you can compare syntax between versions.  They have a slider that shows at which versions the method or class you are looking at has been changed.  You simply click betwene the shown versions to compare the differences.
+
+Ruby-doc.org is nice for two reasons.  If you are not sure excatly what you are looking for, you can simply scroll the page for that class, browsing for an example that looks like what you are trying to achieve.  This is made possible by the two things that make this site nice: 1) lots of examples, 2) all methods are shown on one page, rather than separately.
